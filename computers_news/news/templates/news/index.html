@@ -1,0 +1,25 @@
+{% extends 'main_news/base.html' %}
+    {% block title %}NEWS{% endblock %}
+    {% block content %}
+        <div class="main-news">
+            <div class="container">
+                <div class="main-news-content">
+                    {% for item in news %}
+                        <div class="news-block">
+                            <div class="news-title">
+                                <h2>{{ item.title }}</h2>
+                            </div>
+                            <div class="news-info">
+                                <p>{{ item.full_text|truncatewords:30 }}</p>
+                            </div>
+                            <div class="news-footer">
+                                <p>{{ item.date }}</p>
+                                <a href="{% url 'detail' item.id %}">Szczegóły</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <a href="{% url 'create' %}" class="create-button">Dodać</a>
+        </div>
+    {% endblock %}

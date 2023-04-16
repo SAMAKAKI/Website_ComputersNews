@@ -1,0 +1,12 @@
+{% extends 'main_news/base.html' %}
+    {% block title %}CREATE{% endblock %}
+    {% block content %}
+        <div class="main-create">
+            <div class="container">
+                <form method="post" class="create-form">
+                    {% csrf_token %}
+                    <button type="submit" class="form-button">Usunąć</button>
+                </form>
+            </div>
+        </div>
+    {% endblock %}

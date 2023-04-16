@@ -1,0 +1,17 @@
+{% extends 'main_news/base.html' %}
+    {% block title %}NEWS{% endblock %}
+    {% block content %}
+        <div class="main-deatil">
+            <div class="container">
+                <div class="main-detail-content">
+                    <h2>{{ news.title }}</h2>
+                    <p>{{ news.date }}</p>
+                    <p>{{ news.full_text }}</p>
+                    <div class="detail-block">
+                        <a href="{% url 'update' news.id %}">Update</a>
+                        <a href="{% url 'delete' news.id %}">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}

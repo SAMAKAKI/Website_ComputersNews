@@ -1,0 +1,19 @@
+{% extends 'main_news/base.html' %}
+    {% block title %}CREATE{% endblock %}
+    {% block content %}
+        <div class="main-create">
+            <div class="container">
+                <form method="post" class="create-form">
+                    {% csrf_token %}
+                    <label for="title" class="label-form">Title news</label><br>
+                    {{ form.title }}<br>
+                    <label for="full_text" class="label-form">Full text news</label><br>
+                    {{ form.full_text }}<br>
+                    <label for="date" class="label-form">Date and time create news</label><br>
+                    {{ form.date }}<br>
+                    <span>{{ error }}</span>
+                    <button type="submit" class="form-button">Dodać</button>
+                </form>
+            </div>
+        </div>
+    {% endblock %}
